@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Size;
 import java.sql.Timestamp;
 import java.util.UUID;
 
@@ -18,6 +19,8 @@ import java.util.UUID;
 @Builder
 public class Beer {
     private UUID id;
+
+    @Size(min = 3, max = 50)
     private String beerName;
     private BeerStyleEnum beerStyle;
     private Long upc;
